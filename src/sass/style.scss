@@ -1,0 +1,36 @@
+@import "./libs/bootstrap-reboot.min";
+@import "./libs/owl.carousel.min";
+@import "./libs/mburger";
+@import "./libs/mmenu";
+
+@import "./base/variables";
+@import "./blocks/first-page";
+@import "./blocks/popup";
+@import "./blocks/media";
+body,
+* {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  padding: 0;
+}
+a {
+  text-decoration: none;
+  cursor: pointer;
+}
+li {
+  list-style: none;
+}
+
+//убираю стрелочки у input type='number'
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+}
+
+.disable {
+  display: none;
+}

@@ -1,0 +1,170 @@
+.popup {
+  display: none;
+  width: 100%;
+  min-height: 100vh;
+  background-color: rgba(32, 28, 27, 0.93);
+  position: fixed;
+  z-index: 4;
+  top: 0;
+  left: 0;
+
+  &_active {
+    display: block;
+  }
+  &__form {
+    display: flex;
+    width: 933px;
+    max-width: 90%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow-y: auto;
+    max-height: 100vh;
+    &_ok {
+      height: 283px;
+    }
+    &__close {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+    }
+  }
+  &__left {
+    width: 347px;
+    height: 540px;
+    &_ok {
+      height: 283px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .form {
+    display: flex;
+    flex-direction: column;
+    width: 586px;
+    padding: 45px 60px 35px 60px;
+    background-color: #f2f2f2;
+    opacity: 1;
+    height: 540px;
+    &_ok {
+      height: 283px;
+      width: 586px;
+    }
+    &__close {
+      width: 17px;
+      height: 17px;
+      position: absolute;
+      right: 20px;
+      top: 23px;
+      cursor: pointer;
+      &_ok {
+        position: absolute;
+        right: 20px;
+        top: 23px;
+      }
+      i {
+        font-size: 17px;
+        color: #796454;
+      }
+    }
+    &__title {
+      font-family: "Noto Sans", sans-serif;
+      font-size: 24px;
+      text-transform: uppercase;
+      color: #4a4a4a;
+      &_ok {
+        width: 345px;
+        max-width: 80%;
+      }
+    }
+    &__description {
+      margin-top: 49px;
+      margin-bottom: 0;
+      font-family: "Fira Sans", sans-serif;
+      font-size: 14px;
+      font-weight: normal;
+      line-height: 1.57;
+      text-align: left;
+      color: #716d6d;
+      max-width: 90%;
+    }
+    &__link {
+      font-family: "Lora", serif;
+      font-style: italic;
+      font-size: 14px;
+      color: #806d5f;
+      margin-top: 25px;
+    }
+    label {
+      font-family: "Fira Sans", sans-serif;
+      font-size: 14px;
+      color: #716d6d;
+      margin-top: 25px;
+      margin-bottom: 5px;
+      i {
+        font-size: 8px;
+        vertical-align: top;
+        color: #b25252;
+      }
+    }
+    input {
+      width: 100%;
+      height: 45px;
+      border: solid 1px #eee;
+      background-color: #fff;
+      outline: none;
+      padding: 15px;
+    }
+    .error {
+      border: solid 1px #b75d5d;
+    }
+    textarea {
+      width: 100%;
+      height: 107px;
+      border: solid 1px #eee;
+      background-color: #fff;
+      resize: none;
+      outline: none;
+      padding: 15px;
+    }
+    &__btn {
+      width: 216px;
+      height: 41px;
+      border-radius: 2px;
+      background-color: #db7d3a;
+      border: none;
+      font-family: "Lora", serif;
+      font-size: 14px;
+      font-style: italic;
+      text-align: center;
+      color: #fff;
+      margin: 29px 0 0 auto;
+      &:hover {
+        background-color: darken(#db7d3a, 10%);
+      }
+    }
+  }
+  .form__body {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba($color: #000000, $alpha: 0.5) url("../img/loader.gif")
+        center / 100px no-repeat;
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  .sending.form__body::after {
+    opacity: 1;
+    visibility: visible;
+  }
+}
